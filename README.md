@@ -1,5 +1,4 @@
 # hello-world
 just make a test 
 
-hello,anyone;
-this is my the first test about github.
+allowing i would write about some code c to solve the problem about pat.
