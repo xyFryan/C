@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int *answers,*pg,*grade;
+	int m=0,n=0;//m are students;n are problems;
+	scanf("%d",&m);
+	scanf("%d",&n);
+	answers=(int *)malloc(n*sizeof(int));
+	pg=(int *)malloc(n*sizeof(int));
+	grade=(int *)malloc(m*sizeof(int));
+	for(int i=0;i<n;i++)
+		scanf("%d",&pg[i]);
+	for(int i=0;i<n;i++)
+		scanf("%d",&answers[i]);
+	for(int j=0;j<m;j++){
+	for(int i=0;i<n;i++)
+	{
+		int temp;
+		scanf("%d",&temp);
+		if(temp==answers[i])
+			grade[j]+=pg[i];
+	}
+	}
+	for(int i=0;i<m;i++)
+		printf("%d\n",grade[i]);
+	return 0;
+}
