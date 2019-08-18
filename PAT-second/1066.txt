@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+  int **a,first[5];
+  for(int i=0;i<5;i++)
+    scanf("%d",&first[i]);
+
+  a=(int **)malloc(first[0]*sizeof(int*));
+  for(int i=0;i<first[0];i++)
+    a[i]=(int *)malloc(first[1]*sizeof(int));
+
+  for(int i=0;i<first[0];i++)
+    for(int j=0;j<first[1];j++)
+    {
+      scanf("%d",&a[i][j]);
+      if(a[i][j]<=first[3]&&a[i][j]>=first[2])
+        a[i][j]=first[4];
+    }
+
+
+  for(int i=0;i<first[0];i++)
+    {
+      for(int j=0;j<(first[1]-1);j++){
+      int temp=a[i][j];
+      if(temp/100==0)
+        if(temp/10==0)
+        printf("00%d ",temp);
+        else
+          printf("0%d ",temp);
+      else
+        printf("%d ",temp);
+    }
+
+    int temp=a[i][first[1]-1];
+      if(temp/100==0)
+        if(temp/10==0)
+        printf("00%d\n",temp);
+        else
+          printf("0%d\n",temp);
+      else
+        printf("%d\n",temp);
+  }
+  return 0;
+}

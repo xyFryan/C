@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<stddef.h>
+#define N 1000
+int main(){
+	//准考证号 试机座位号 考试座位号
+	/*
+	输入样例：
+4
+10120150912233 2 4
+10120150912119 4 1
+10120150912126 1 3
+10120150912002 3 2
+2
+3 4
+输出样例：
+10120150912002 2
+10120150912119 1
+*/
+	char date[N][15];
+	int n=0;
+	scanf("%d",&n);
+	int *a,*b;
+	a=(int *)malloc(n*sizeof(int));
+	b=(int *)malloc(n*sizeof(int));
+	for(int i=0;i<n;i++){
+	scanf("%14s",date[i]);
+	scanf("%d",&a[i]);
+	scanf("%d",&b[i]);
+	}
+	int m=0;
+	scanf("%d",&m);
+	for(int i=0;i<m;i++){
+	int temp=0;
+	scanf("%d",&temp);
+	for(int j=0;j<n;j++){
+	if(a[j]==temp)
+		printf("%s %d\n",date[j],b[j]);
+		}
+	}
+	
+	return 0; 
+}
